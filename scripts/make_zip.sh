@@ -25,7 +25,9 @@ zip -r "$OUT" . \
   -x 'evidencias/*' \
   -x '*.egg-info/*' \
   -x './.git/*' \
-  -x 'Docs/*'
+  -x 'Docs/*' \
+  -x '*.zip' \
+  -x '*.~lock.*#'
 
 echo "wrote $OUT"
 echo "Contents:"
