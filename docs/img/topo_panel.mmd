@@ -1,0 +1,14 @@
+flowchart LR
+    subgraph Cluster["Gossip (UDP, portas de gossip)"]
+        A((A)) <--> B((B))
+        B <--> C((C))
+        C <--> D((D))
+        D <--> E((E))
+        E <--> F((F))
+        A <--> D
+        B <--> E
+    end
+    Panel[Painel observer]
+    Panel -. status read-only .-> A
+    Panel -. status read-only .-> C
+    Panel -. status read-only .-> F

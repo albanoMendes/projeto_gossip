@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant A as No A (iniciador)
+    participant B as No B (par 1)
+    participant C as No C (par 2)
+    Note over A: Timer dispara (~300 ms) seleciona 2 pares distintos: B, C
+    Note over A,B: Troca push-pull 1
+    A->>B: GOSSIP {sender A, notices estado(A)}
+    Note over B: merge(estado A)
+    B-->>A: REPLY {sender B, notices estado(B)}
+    Note over A: merge(estado B)
+    Note over A,C: Troca push-pull 2 (independente)
+    A->>C: GOSSIP {sender A, notices estado(A)}
+    Note over C: merge(estado A)
+    C-->>A: REPLY {sender C, notices estado(C)}
+    Note over A: merge(estado C)
+    Note over A,C: GOSSIP/REPLY pode ser descartado por perda; trocas futuras reparam
