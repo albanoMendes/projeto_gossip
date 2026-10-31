@@ -1,0 +1,5 @@
+# Dev/build-time only (not required to run the nodes).
+pytest>=7.4
+pytest-asyncio>=0.23
+python-pptx>=0.6   # used by scripts/make_slides.py to generate docs/slides.pptx
+Pillow>=10.0       # used by scripts/make_diagrams.py to render docs/img/*.png
