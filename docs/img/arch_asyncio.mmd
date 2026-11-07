@@ -1,0 +1,12 @@
+flowchart TD
+    subgraph Loop["Event loop asyncio (um por no)"]
+        Cycle["corrotina: ciclo gossip await sleep(0.3)"]
+        GProto["DatagramProtocol: gossip (porta de gossip)"]
+        SProto["DatagramProtocol: status (porta de status)"]
+        CLI["CLI: to_thread(input)"]
+    end
+    Store[("NoticeStore (instancia unica)")]
+    Cycle --> Store
+    GProto --> Store
+    SProto -. somente leitura .-> Store
+    CLI --> Store

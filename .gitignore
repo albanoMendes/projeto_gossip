@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.coverage
+dist/
+build/
+# Reference materials (professor's PDFs) — not part of the submission
+Docs/
+
+# Demo run artifacts
+evidencias/
+
+# Submission packages
+*.zip
+
+# OS cruft
+.DS_Store
+
+# LibreOffice/office lock files
+.~lock.*#
